@@ -191,11 +191,11 @@ class Simulate(yml_base):
             integrator = omm.VerletIntegrator(self.dt)
 
         try:
-            platform = omm.Platform_getPlatformByName("CUDA")
+            platform = omm.Platform.getPlatformByName("CUDA")
             properties = {'DeviceIndex': str(self.gpu_id),
                           'CudaPrecision': 'mixed'}
         except Exception:
-            platform = omm.Platform_getPlatformByName("OpenCL")
+            platform = omm.Platform.getPlatformByName("OpenCL")
             properties = {'DeviceIndex': str(self.gpu_id)}
 
         simulation = app.Simulation(
@@ -254,6 +254,7 @@ class Simulate(yml_base):
         if self.dbonds_umb:
             path_label += f'_{self.dbonds_umb["rc0"]:.3f}'
         omm_path = create_path(sys_label=path_label)
+        print(omm_path)
         logger.info(f"Starting simulation at {omm_path}")
         self.dump_yaml(f"{omm_path}/setting.yml")
         self.run_sim(omm_path)

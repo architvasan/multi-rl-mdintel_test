@@ -7,6 +7,6 @@ nonbonded_cutoff: 1
 pdb_file: 2pwz_G.pdb
 pressure: 1.0
 report_time: 10
-sim_time: 0.1
+sim_time: 1
 temperature: 310
 top_file: 2pwz_G.top

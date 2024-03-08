@@ -42,6 +42,7 @@ if __name__ == "__main__":
             start_time = perf_counter()
             batch_run_molecular_dynamics([pdb_file.read_text()] * 4, my_yaml.absolute())
             multi_run = perf_counter() - start_time
+            print("running md simulation")
 
             with log_file.open('a') as fp:
                 print(json.dumps({

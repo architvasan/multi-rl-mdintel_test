@@ -9,7 +9,7 @@ import numpy as np
 
 from multirl.utils.pinning import get_persistent_process_pool, stop_ongoing_work, clear_persistent_pool
 import multirl.config
-from multirl import config
+
 logger = logging.getLogger(__name__)
 
 
